@@ -1,0 +1,51 @@
+﻿@model IEnumerable<lz523915_MIS4200.Models.Pet>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Vet.vetFirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.petBreed)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.petOwnerName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dateOfLastVisit)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Vet.vetFirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.petBreed)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.petOwnerName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dateOfLastVisit)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.petId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.petId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.petId })
+        </td>
+    </tr>
+}
+
+</table>

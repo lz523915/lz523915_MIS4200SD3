@@ -1,0 +1,29 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+ 
+}
+
+<div class="jumbotron">
+    <h1>ASP.NET</h1>
+    <p class="lead">This application was created for MIS 4200.</p>
+    
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Get Started</h2>
+        <p>
+            This application was created for the purpose of completing the SD3 assingment for MIS 4200.
+        </p>
+        
+    </div>
+    <div class="col-md-4">
+        <h2>More</h2>
+        <p>This project is the third MVC application that we have created.</p>
+        @Html.ActionLink("Vets", "Index", "Vets")
+        @Html.ActionLink("Pets", "Index", "Pets")
+        @Html.ActionLink("Treatments", "Index", "Treatments")
+        @Html.ActionLink("VisitDetails", "Index", "VisitDetails")
+
+    </div>
+</div>

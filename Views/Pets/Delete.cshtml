@@ -1,0 +1,56 @@
+﻿@model lz523915_MIS4200.Models.Pet
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Pet</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Vet.vetFirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Vet.vetFirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.petBreed)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.petBreed)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.petOwnerName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.petOwnerName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dateOfLastVisit)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dateOfLastVisit)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

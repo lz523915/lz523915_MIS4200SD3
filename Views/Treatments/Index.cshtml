@@ -1,0 +1,39 @@
+﻿@model IEnumerable<lz523915_MIS4200.Models.Treatment>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.treatmentDescription)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.treatmentCost)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.treatmentDescription)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.treatmentCost)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.treatmentId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.treatmentId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.treatmentId })
+        </td>
+    </tr>
+}
+
+</table>
